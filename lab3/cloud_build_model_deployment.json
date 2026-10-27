@@ -6,7 +6,7 @@
       "args": [
         "storage",
         "cp",
-        "gs://${_MODEL_REPO}/model_dt.pkl",
+        "gs://${_MODEL_REPO}/model.pkl",
         "./lab2/prediction-api/testResources/model.pkl"     
       ]
     },		
@@ -24,7 +24,7 @@
       "args": [
         "storage",
         "cp",
-        "gs://${_MODEL_REPO}/model_dt.pkl",
+        "gs://${_MODEL_REPO}/model.pkl",
         "./lab2/prediction-api/model.pkl"
       ]
     },	
