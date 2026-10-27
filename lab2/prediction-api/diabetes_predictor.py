@@ -27,7 +27,8 @@ class DiabetesPredictor:
                 self.load_model('model.pkl')
 
         df = pd.read_json(StringIO(json.dumps(prediction_input)), orient='records')
-        xNew = df[['ntp', 'pgc', 'dbp', 'tsft', 'si', 'bmi', 'dpf', 'age']]
+        xNew = df[['Age', 'Gender', 'Education', 'Country', 'Ethnicity', 'Nscore', 'Escore', 'Oscore', 'Ascore',
+                   'Cscore', 'Impulsive', 'SS']]
         y_pred = self.model.predict(xNew)
         print(y_pred)
         logging.info(y_pred[0])
