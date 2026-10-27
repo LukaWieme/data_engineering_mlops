@@ -11,10 +11,10 @@ app = Flask(__name__)
 
 # A decorator used to tell the application
 # which URL is associated function
-@app.route('/checkdiabetes', methods=["GET", "POST"])
+@app.route('/checkcannabis', methods=["GET", "POST"])
 def check_diabetes():
     if request.method == "GET":
-        return render_template("input_form_page.html")
+        return render_template("Cannabis_Consumption_Prediction.html")
 
     elif request.method == "POST":
         prediction_input = [
@@ -56,7 +56,7 @@ def check_diabetes():
 
         prediction_label = class_labels.get(int(prediction_value), "Unkown class")
 
-        return render_template("response_page.html",
+        return render_template("Cannabis_Classification_Result.html",
                                prediction_variable=prediction_label)
 
     else:
