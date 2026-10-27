@@ -109,6 +109,7 @@ class DiabetesPredictor:
                 self.load_model('model.pkl')
 
         df = pd.read_json(StringIO(json.dumps(prediction_input)), orient='records')
+        df = df.astype(float)
         for score, score_map in SCORE_MAPS.items():
             if score_map:
                 raw_score = float(df.loc[0, score])
