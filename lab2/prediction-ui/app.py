@@ -19,14 +19,18 @@ def check_diabetes():
     elif request.method == "POST":
         prediction_input = [
             {
-                "ntp": int(request.form.get("ntp")),  # getting input with name = ntp in HTML form
-                "pgc": int(request.form.get("pgc")),  # getting input with name = pgc in HTML form
-                "dbp": int(request.form.get("dbp")),
-                "tsft": int(request.form.get("tsft")),
-                "si": int(request.form.get("si")),
-                "bmi": float(request.form.get("bmi")),
-                "dpf": float(request.form.get("dpf")),
-                "age": int(request.form.get("age"))
+                "Age": float(request.form.get("Age")),  # getting input with name = ntp in HTML form
+                "Gender": float(request.form.get("Gender")),  # getting input with name = pgc in HTML form
+                "Education": float(request.form.get("Education")),
+                "Country": float(request.form.get("Country")),
+                "Ethnicity": float(request.form.get("Ethnicity")),
+                "Nscore": float(request.form.get("Nscore")),
+                "Escore": float(request.form.get("Escore")),
+                "Oscore": float(request.form.get("Oscore")),
+                "Ascore": float(request.form.get("Ascore")),
+                "Cscore": float(request.form.get("Cscore")),
+                "Impulsive": float(request.form.get("Impulsive")),
+                "SS": float(request.form.get("SS"))
             }
         ]
 
@@ -41,8 +45,19 @@ def check_diabetes():
 
         prediction_value = res.json()['result']
         app.logger.info("Prediction Output : %s", prediction_value)
+
+        class_labels = {0: "Never Used",
+                        1: "Used over a Decade Ago",
+                        2: "Used in Last Decade",
+                        3: "Used in Last Year",
+                        4: "Used in Last Month",
+                        5: "Used in Last Week",
+                        6: "Used in Last Day"}
+
+        prediction_label = class_labels.get(int(prediction_value), "Unkown class")
+
         return render_template("response_page.html",
-                               prediction_variable=eval(prediction_value))
+                               prediction_variable=prediction_label)
 
     else:
         return jsonify(message="Method Not Allowed"), 405  # The 405 Method Not Allowed should be used to indicate
