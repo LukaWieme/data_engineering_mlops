@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, request, jsonify
 
-from diabetes_predictor import DiabetesPredictor
+from cannabis_predictor import DiabetesPredictor
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
