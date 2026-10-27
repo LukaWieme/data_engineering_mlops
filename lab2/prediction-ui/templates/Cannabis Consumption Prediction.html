@@ -1,0 +1,140 @@
+
+<!-- saved from url=(0076)file:///C:/Users/20223765/Downloads/Cannabis%20Consumption%20Prediction.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Cannabis Consumption Prediction</title>
+</head>
+<body>
+
+<form action="file:///C:/cannabis_predictor" method="POST">
+    <h1>Predict Cannabis Use Category</h1>
+    
+    <label for="Age">Age group:</label>
+    <select id="Age" name="Age" required="">
+        <option value="">Select age group</option>
+        <option value="-0.95197">18-24</option>
+        <option value="-0.07854">25-34</option>
+        <option value="0.49788">35-44</option>
+        <option value="1.09449">45-54</option>
+        <option value="1.82213">55-64</option>
+        <option value="2.59171">65+</option>
+    </select>
+    <br><br>
+
+    <label for="Gender">Gender:</label>
+    <select id="Gender" name="Gender" required="">
+        <option value="">Select gender</option>
+        <option value="0.48246">Female</option>
+        <option value="-0.48246">Male</option>
+    </select>
+    <br><br>
+    
+    <label for="Education">Education:</label>
+    <select id="Education" name="Education" required="">
+        <option value="">Select education level</option>
+        <option value="-2.43591">Left school before 16 years</option>
+        <option value="-1.73790">Left school at 16 years</option>
+        <option value="-1.43719">Left school at 17 years</option>
+        <option value="-1.22751">Left school at 18 years</option>
+        <option value="-0.61113">Some college or university, no certificat or degree</option>
+        <option value="-0.05921">Professional certificate/diploma</option>
+        <option value="0.45468">University degree</option>
+        <option value="1.16365">Masters degree</option>
+        <option value="1.98437">Doctorate degree</option>
+    </select>
+    <br><br>
+
+    <label for="Country">Country of residence:</label>
+    <select id="Country" name="Country" required="">
+        <option value="">Select country</option>
+        <option value="-0.09765">Australia</option>
+        <option value="0.24923">Canada</option>
+        <option value="-0.46841">New Zealand</option>
+        <option value="-0.28519">Other</option>
+        <option value="0.21128">Republic of Ireland</option>
+        <option value="0.96082">UK</option>
+        <option value="-0.57009">USA</option>
+    </select>
+    <br><br>
+
+    <label for="Ethnicity">Ethnicity:</label>
+    <select id="Ethnicity" name="Ethnicity" required="">
+        <option value="">Select Ethnicity</option>
+        <option value="-0.50212">Asian</option>
+        <option value="-1.10702">Black</option>
+        <option value="1.90725">Mixed Balck/Asian</option>
+        <option value="0.12600">Mixed White/Asian</option>
+        <option value="-0.22166">Mixed White/Black</option>
+        <option value="0.11440">Other</option>
+        <option value="-0.31685">White</option>
+    </select>
+    <br><br>
+
+        <h3>Rate your level for each trait on a scale from 0 to 60, where 0 is very low and 60 is very high.</h3>
+    
+    <label for="Nscore">Nscore (Neuroticism):</label>
+    
+    <input type="range" id="Nscore" name="Nscore" min="1" max="60" value="30" oninput="document.getElementById(&#39;NscoreValue&#39;).textContent = this.value">
+    
+    <br>
+
+    <output id="NscoreValue">30</output>
+    <br><br>
+
+    <label for="Escore">Escore (Extraversion):</label>
+    
+    <input type="range" id="Escore" name="Escore" min="1" max="60" value="30" oninput="document.getElementById(&#39;EscoreValue&#39;).textContent = this.value">
+    
+    <br>
+
+    <output id="EscoreValue">30</output>
+    <br><br>
+    
+    <label for="Oscore">Oscore (Openness to experience):</label>
+    
+    <input type="range" id="Oscore" name="Oscore" min="1" max="60" value="30" oninput="document.getElementById(&#39;OscoreValue&#39;).textContent = this.value">
+    
+    <br>
+
+    <output id="OscoreValue">30</output>
+    <br><br>
+
+    <label for="Ascore">Ascore (Agreeableness):</label>
+    
+    <input type="range" id="Ascore" name="Ascore" min="1" max="60" value="30" oninput="document.getElementById(&#39;AscoreValue&#39;).textContent = this.value">
+    
+    <br>
+
+    <output id="AscoreValue">30</output>
+    <br><br>
+
+    <label for="Cscore">Cscore (Conscientiousness):</label>
+    
+    <input type="range" id="Cscore" name="Cscore" min="1" max="60" value="30" oninput="document.getElementById(&#39;CscoreValue&#39;).textContent = this.value">
+    
+    <br>
+
+    <output id="CscoreValue">30</output>
+    <br><br>
+    
+    <h3>Rate your level for this trait on a scale from 0 to 10, where 0 is very low and 10 is very high.</h3>
+    <label for="Impulsive"> Impulsiveness:</label>
+    
+    <input type="range" id="Impulsive" name="Impulsive" min="1" max="10" value="5" oninput="document.getElementById(&#39;ImpulsivenessValue&#39;).textContent = this.value">
+    <br>
+
+    <output id="ImpulsivenessValue">5</output>
+    <br><br>
+    
+    <h3>Rate your level for this trait on a scale from 0 to 11, where 0 is very low and 11 is very high.</h3>
+
+    <label for="SS"> Sensation seeing:</label>
+    
+    <input type="range" id="SS" name="SS" min="1" max="11" value="6" oninput="document.getElementById(&#39;SSValue&#39;).textContent = this.value">
+    <br>
+
+    <output id="SSValue">6</output>
+    <br><br>
+    <button type="submit">Submit</button>
+    </form>
+
+</body></html>
