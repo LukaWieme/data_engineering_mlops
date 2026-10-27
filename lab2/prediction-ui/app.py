@@ -46,13 +46,13 @@ def check_diabetes():
         prediction_value = res.json()['result']
         app.logger.info("Prediction Output : %s", prediction_value)
 
-        class_labels = {0: "Never Used",
-                        1: "Used over a Decade Ago",
-                        2: "Used in Last Decade",
-                        3: "Used in Last Year",
-                        4: "Used in Last Month",
-                        5: "Used in Last Week",
-                        6: "Used in Last Day"}
+        class_labels = {'CL0': "Never Used",
+                        'CL1': "Used over a Decade Ago",
+                        'CL2': "Used in Last Decade",
+                        'CL3': "Used in Last Year",
+                        'CL4': "Used in Last Month",
+                        'CL5': "Used in Last Week",
+                        'CL6': "Used in Last Day"}
 
         prediction_label = class_labels.get(int(prediction_value), "Unkown class")
 
