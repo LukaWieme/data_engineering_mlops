@@ -32,7 +32,7 @@ class DiabetesPredictor:
         y_pred = self.model.predict(xNew)
         print(y_pred)
         logging.info(y_pred[0])
-        status = (y_pred[0] > 0.5)
+        status = (y_pred[0])
         print(status)
         return status
 
