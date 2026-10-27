@@ -41,20 +41,9 @@ def check_diabetes():
         # json.dumps() function will convert a subset of Python objects into a json string.
         # json.loads() method can be used to parse a valid JSON string and convert it into a Python Dictionary.
         predictor_api_url = os.environ['PREDICTOR_API']
-        res = requests.post(
-            predictor_api_url,
-            json=prediction_input,
-            timeout=30
-        )
+        res = requests.post(predictor_api_url, json=json.loads(json.dumps(prediction_input)))
 
-        app.logger.info("Predictor URL: %s", predictor_api_url)
-        app.logger.info("API status code: %s", res.status_code)
-        app.logger.info("API response: %s", res.text[:1000])
-
-        res.raise_for_status()
-
-        response_data = res.json()
-        prediction_value = response_data['result']
+        prediction_value = res.json()['result']
         app.logger.info("Prediction Output : %s", prediction_value)
 
         class_labels = {0: "Never Used",

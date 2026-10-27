@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 # content of test_class.py
-import diabetes_predictor
+import cannabis_predictor
 
 
 class TestDiabetesPredictor:
