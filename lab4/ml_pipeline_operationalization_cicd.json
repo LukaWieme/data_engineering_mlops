@@ -5,7 +5,7 @@
       "entrypoint": "/bin/sh",
       "args": [
         "-c",
-        "cd ./lab4/ml-pipeline && python -m venv .myenv && . .myenv/bin/activate && python -m pip install --upgrade pip && python -m pip install -r requirements.txt && python dt_lr_train_pipeline.py --target_file=diabetes_predictor_dt_lr_pipeline.yaml"
+        "cd ./lab4/ml-pipeline && python -m venv .myenv && . .myenv/bin/activate && python -m pip install --upgrade pip && python -m pip install -r requirements.txt && python lr_train_pipeline_cannabis.py --target_file=cannabis_predictor_dt_lr_pipeline.yaml"
       ],
       "id": "compile-pipeline"
     },
@@ -15,8 +15,8 @@
       "args": [
         "storage",
         "cp",
-        "./lab4/ml-pipeline/diabetes_predictor_dt_lr_pipeline.yaml",
-        "gs://${_CONF_REPO}/diabetes_predictor_dt_lr_pipeline.yaml"
+        "./lab4/ml-pipeline/cannabis_predictor_dt_lr_pipeline.yaml",
+        "gs://${_CONF_REPO}/cannabis_predictor_dt_lr_pipeline.yaml"
       ],
       "waitFor": [
         "compile-pipeline"
@@ -40,8 +40,8 @@
     {
       "name": "${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/pipeline-executor:0.0.1",
       "args": [
-        "--name=diabetes-predictor-pipeline",
-        "--pipeline_def=./lab4/ml-pipeline/diabetes_predictor_dt_lr_pipeline.yaml",
+        "--name=cannabis-predictor-pipeline",
+        "--pipeline_def=./lab4/ml-pipeline/cannabis_predictor_dt_lr_pipeline.yaml",
         "--pipeline_root=gs://${_TEMP_REPO}",
         "--parameter_dict=./parameters.json"
       ],
