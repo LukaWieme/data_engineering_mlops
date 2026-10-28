@@ -1,5 +1,6 @@
 import kfp
 import typing
+import argparse
 from typing import Dict
 from typing import NamedTuple
 from kfp import dsl
@@ -228,6 +229,7 @@ def _run_pipeline():
     job.run()
 
 def parse_command_line_arguments():
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--target_file', type=str, default="training_pipeline.yaml", help="cannabis-predictor")
     args = parser.parse_args()
