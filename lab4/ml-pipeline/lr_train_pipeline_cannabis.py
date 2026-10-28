@@ -198,7 +198,7 @@ def pipeline(project_id: str, region: str, data_bucket: str, dataset_uri: str, m
 
 
 def compile_pipeline(target_file):
-    compiler.Compiler().compile(pipeline_func=ml_pipeline,
+    compiler.Compiler().compile(pipeline_func=pipeline,
                                 package_path=target_file)
 
 # This is only for testing - run the pipeline via CI/CD as we did in Lab4 Live
