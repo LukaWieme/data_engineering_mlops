@@ -1,4 +1,5 @@
 import kfp
+from kfp import compiler
 import typing
 import argparse
 from typing import Dict
