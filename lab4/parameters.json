@@ -4,6 +4,6 @@
   "data_bucket": "drug-data-group9", 
   "dataset_uri": "gs://drug-data-group9/cannabis_dataset.csv",
   "model_repo": "drug-models-group9", 
-  "thresholds_dict_str": {"accuracy":0.3},
+  "thresholds_dict_str": "{\"accuracy\":0.3}",
   "model_repo_uri": "gs://drug-models-group9"
 }
